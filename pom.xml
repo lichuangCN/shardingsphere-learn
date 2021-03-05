@@ -11,6 +11,8 @@
     <modules>
         <module>common</module>
         <module>sharding-db</module>
+        <module>sharding-db-table</module>
+        <module>sharding-table</module>
     </modules>
 
     <properties>

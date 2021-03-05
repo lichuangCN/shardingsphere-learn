@@ -1,0 +1,17 @@
+server:
+  port: 7090
+spring:
+  application:
+    name: sharding-table
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+  typeAliasesPackage: site.muzhi.entity

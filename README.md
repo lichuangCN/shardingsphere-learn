@@ -2,7 +2,7 @@
 
 高于下面版本的 Sharding 在与Druid 集成时会出现问题。
 参考博客：https://zhouzhixiang.blog.csdn.net/article/details/104889534
-
+``
 ```xml
 <dependency>
     <groupId>org.apache.shardingsphere</groupId>
@@ -24,13 +24,17 @@
 ### 官方主页
 https://shardingsphere.apache.org/document/legacy/4.x/document/cn/overview/
 
-### yaml配置文档
-https://shardingsphere.apache.org/document/legacy/4.x/document/cn/manual/sharding-jdbc/configuration/config-yaml/
+### Springboot配置文档
+官方文档是properties格式，也可以写成yml格式
+https://shardingsphere.apache.org/document/legacy/4.x/document/cn/manual/sharding-jdbc/configuration/config-spring-boot/
 
 ## 笔记
 理解前提：所有的数据表都存储在一个数据库下，当遇到物理或者并发瓶颈时，考虑分库分表的策略。
 
 参考博客：https://blog.csdn.net/weixin_44062339/article/details/100491744
+
+### 基本概念
+简单介绍分库分表的原因，仅考虑单种解决方案，暂不讨论分库分表多种组合的方案。
 
 ### 1.分表
 ### 1.1 水平分表：目的是为解决单表数据量大的问题。水平分表是在同一个数据库内，把同一个表的数据按一定规则拆到多个表中。

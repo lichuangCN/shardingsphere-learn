@@ -1,0 +1,14 @@
+server:
+  port: 7095
+spring:
+  application:
+    name: sharding-db-table
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+  typeAliasesPackage: site.muzhi.entity
