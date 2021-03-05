@@ -1,0 +1,32 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds1
+      ds0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/sdb-0?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+        username: root
+        password: root
+      ds1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/sdb-1?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+        username: root
+        password: root
+    sharding:
+      tables:
+        # 逻辑表
+        user:
+          # 数据源中的某个表,如:ds${0..1}.t_order${0..1}
+          actual-data-nodes: ds0.user
+          # 主键生成算法
+          key-generator:
+            column: id
+            type: SNOWFLAKE
+        city:
+          actual-data-nodes: ds1.city
+    # 显示sql
+    props:
+      sql:
+        show: true

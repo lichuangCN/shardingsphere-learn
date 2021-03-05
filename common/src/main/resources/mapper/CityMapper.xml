@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="site.muzhi.common.mapper.CityMapper">
+
+    <select id="list" resultType="site.muzhi.common.entity.City">
+        SELECT c.* FROM city c
+    </select>
+
+    <select id="findById" resultType="site.muzhi.common.entity.City">
+        SELECT c.* FROM city c WHERE c.id=#{id}
+    </select>
+
+    <select id="listByName" resultType="site.muzhi.common.entity.City">
+        SELECT c.* FROM city c WHERE c.city_name LIKE CONCAT(#{name},'%')
+    </select>
+
+</mapper>
