@@ -10,6 +10,7 @@
     <version>1.0</version>
     <modules>
         <module>common</module>
+        <module>hash</module>
         <module>sharding-db</module>
         <module>sharding-db-table</module>
         <module>sharding-table</module>
